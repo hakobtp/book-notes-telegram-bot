@@ -1,0 +1,11 @@
+version = '1.0'
+archivesBaseName = 'common'
+
+dependencies {
+    implementation 'org.springframework:spring-context'
+    implementation 'javax.validation:validation-api'
+}
+
+bootJar {
+    enabled = false
+}
