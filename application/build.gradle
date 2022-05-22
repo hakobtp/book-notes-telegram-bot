@@ -1,0 +1,10 @@
+version = '1.0'
+archivesBaseName = 'application'
+
+dependencies {
+    implementation project(':common')
+}
+
+bootJar {
+    enabled = false
+}
