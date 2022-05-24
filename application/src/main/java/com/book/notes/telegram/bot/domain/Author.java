@@ -1,24 +1,16 @@
 package com.book.notes.telegram.bot.domain;
 
 import com.book.notes.telegram.bot.common.utils.Language;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+public record Author(AuthorId id, String firstName, String lastName, Language language) {
 
-@Getter
-@AllArgsConstructor
-public class Author {
+    public static Author withId(AuthorId id, String firstName, String lastName, Language language) {
+        return new Author(id, firstName, lastName, language);
+    }
 
-    private AuthorId id;
-
-    @NotBlank
-    private String firstName;
-    private String lastName;
-
-    @NotNull
-    private Language language;
+    public static Author withoutId(String firstName, String lastName, Language language) {
+        return new Author(null, firstName, lastName, language);
+    }
 
     public record AuthorId(Long author, Long book) {
     }

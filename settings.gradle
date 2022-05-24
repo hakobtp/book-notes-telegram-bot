@@ -2,5 +2,6 @@ rootProject.name = 'book.notes.telegram.bot'
 
 include 'common'
 include 'application'
+include 'testdata'
 
 

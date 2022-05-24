@@ -25,9 +25,17 @@ subprojects {
         }
     }
 
+    ext {
+        mockitoVersion = "4.5.1"
+    }
+
     dependencies {
         compileOnly 'org.projectlombok:lombok'
         annotationProcessor 'org.projectlombok:lombok'
+
+        testImplementation "org.mockito:mockito-core:$mockitoVersion"
+        testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+        testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
 
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         testImplementation 'org.springframework.security:spring-security-test'
