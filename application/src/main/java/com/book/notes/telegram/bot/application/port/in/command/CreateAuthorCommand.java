@@ -7,10 +7,10 @@ import lombok.Getter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public interface CreateAuthorCommand extends Command<CreateAuthorCommand.CreateAuthorCommandModel, Boolean> {
+public interface CreateAuthorCommand extends Command<CreateAuthorCommand.CreateAuthor, Boolean> {
 
     @Getter
-    class CreateAuthorCommandModel extends SelfValidating<CreateAuthorCommandModel> {
+    class CreateAuthor extends SelfValidating<CreateAuthor> {
 
         @NotBlank
         private final String firstName;
@@ -20,7 +20,7 @@ public interface CreateAuthorCommand extends Command<CreateAuthorCommand.CreateA
         @NotNull
         private final Language language;
 
-        public CreateAuthorCommandModel(String firstName, String lastName, Language language) {
+        public CreateAuthor(String firstName, String lastName, Language language) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.language = language;

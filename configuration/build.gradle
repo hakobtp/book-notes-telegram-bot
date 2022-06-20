@@ -1,0 +1,19 @@
+bootJar {
+    manifest {
+        attributes 'Start-Class': 'com.book.notes.telegram.bot.configuration.Application'
+    }
+}
+
+version = '1.0'
+archivesBaseName = 'application'
+
+dependencies {
+    implementation project(':common')
+    implementation project(':application')
+    implementation project(':adapters:web')
+    implementation project(':adapters:persistence')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    runtimeOnly 'com.h2database:h2'
+}

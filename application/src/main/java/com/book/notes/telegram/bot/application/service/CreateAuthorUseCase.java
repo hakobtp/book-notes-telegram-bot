@@ -10,11 +10,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 class CreateAuthorUseCase implements CreateAuthorCommand {
 
-    private final UpdateAuthorStateCommand updateAuthorState;
+//    private final UpdateAuthorStateCommand updateAuthorState;
 
     @Override
-    public Boolean execute(CreateAuthorCommandModel model) {
+    public Boolean execute(CreateAuthor model) {
         var author = Author.withoutId(model.getFirstName(), model.getLastName(), model.getLanguage());
-        return updateAuthorState.update(author).author() != null;
+        return null;
+//        return updateAuthorState.update(author).author() != null;
     }
 }

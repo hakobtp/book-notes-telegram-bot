@@ -4,6 +4,9 @@ archivesBaseName = 'common'
 dependencies {
     implementation 'org.springframework:spring-context'
     implementation 'javax.validation:validation-api'
+
+//    implementation 'javax.persistence:javax.persistence-api:2.2' //need for filter
+
 }
 
 bootJar {

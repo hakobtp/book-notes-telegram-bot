@@ -1,0 +1,9 @@
+version = '1.0'
+archivesBaseName = 'web'
+
+dependencies {
+    implementation project(':common')
+    implementation project(':application')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

@@ -9,7 +9,7 @@ public class AuthorTestData {
 
     public static Author defaultAuthor() {
         return builder()
-                .id(new Author.AuthorId(ID_LONG_VAL, ID_LONG_VAL))
+                .id(new Author.AuthorId(ID_LONG_VAL, ID_LONG_VAL, API_ID))
                 .firstName(AUTHOR_FIRST_NAME)
                 .lastName(AUTHOR_LAST_NAME)
                 .language(LANGUAGE_ARM)

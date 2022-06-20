@@ -1,6 +1,6 @@
 package com.book.notes.telegram.bot.application.port.in.command;
 
-import com.book.notes.telegram.bot.application.port.in.command.CreateAuthorCommand.CreateAuthorCommandModel;
+import com.book.notes.telegram.bot.application.port.in.command.CreateAuthorCommand.CreateAuthor;
 import com.book.notes.telegram.bot.common.utils.Language;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -17,11 +17,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class CreateAuthorCommandTest {
 
     @MethodSource
-    @DisplayName("Should create CreateAuthorCommandModel object")
+    @DisplayName("Should create CreateAuthor object")
     @ParameterizedTest(name = "When fields are {argumentsWithNames}.")
     void createAuthorCommandModel_successCaseTest(String firstName, String lastName, Language language) {
         //GIVEN
-        var model = new CreateAuthorCommandModel(firstName, lastName, language);
+        var model = new CreateAuthor(firstName, lastName, language);
 
         //THEN
         assertEquals(model.getLanguage(), language);
@@ -41,7 +41,7 @@ class CreateAuthorCommandTest {
     @ParameterizedTest(name = "When fields are {argumentsWithNames}.")
     void createAuthorCommandModel_validationTest(String firstName, String lastName, Language language) {
         var ex = assertThrows(ConstraintViolationException.class,
-                () -> new CreateAuthorCommandModel(firstName, lastName, language));
+                () -> new CreateAuthor(firstName, lastName, language));
     }
 
     private static Stream<Arguments> createAuthorCommandModel_validationTest() {

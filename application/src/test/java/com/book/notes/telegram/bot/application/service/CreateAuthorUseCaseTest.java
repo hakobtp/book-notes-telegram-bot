@@ -1,6 +1,6 @@
 package com.book.notes.telegram.bot.application.service;
 
-import com.book.notes.telegram.bot.application.port.in.command.CreateAuthorCommand.CreateAuthorCommandModel;
+import com.book.notes.telegram.bot.application.port.in.command.CreateAuthorCommand.CreateAuthor;
 import com.book.notes.telegram.bot.application.port.out.command.UpdateAuthorStateCommand;
 import com.book.notes.telegram.bot.testdata.AuthorTestData;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ class CreateAuthorUseCaseTest {
     @Test
     void createAuthorExecuteTest() {
         //GIVEN
-        var model = new CreateAuthorCommandModel(AUTHOR_FIRST_NAME, AUTHOR_LAST_NAME, LANGUAGE_ARM);
+        var model = new CreateAuthor(AUTHOR_FIRST_NAME, AUTHOR_LAST_NAME, LANGUAGE_ARM);
         var author = AuthorTestData.defaultAuthor();
 
         given(updateAuthorState.update(any())).willReturn(author.id());
